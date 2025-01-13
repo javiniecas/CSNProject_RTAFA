@@ -3,7 +3,7 @@ import re
 
 interface = "Wi-Fi" # replace with your desired interface
 
-pcap_reader = pyshark.LiveCapture(interface='wlp0s20f3', bpf_filter='ip and https')
+pcap_reader = pyshark.LiveCapture(interface=interface)
 try:
     for packet in pcap_reader.sniff_continuously(packet_count=100):
         print(f'Packet Number: {packet.number}')
