@@ -3,9 +3,9 @@ import re
 
 interface = "Wi-Fi" # replace with your desired interface
 
-pcap_reader = pyshark.LiveCapture(interface=interface)
+pcap_reader = pyshark.LiveCapture(interface='wlp0s20f3', bpf_filter='ip and https')
 try:
-    for packet in pcap_reader.sniff_continuously(packet_count=10):
+    for packet in pcap_reader.sniff_continuously(packet_count=100):
         print(f'Packet Number: {packet.number}')
         print(f'Timestamp: {packet.sniff_time}')
 
@@ -31,15 +31,14 @@ try:
             print(f'TCP Source Port: {packet.tcp.srcport}')
             print(f'TCP Destination Port: {packet.tcp.dstport}')
             print(f'TCP {packet.tcp.flags.showname}')
+            print(f'TCP Window Size: {packet.tcp.window_size}')
+            print(f'TCP Checksum: {packet.tcp.checksum}')
 
         if 'udp' in packet:
             print(f'UDP Source Port: {packet.udp.srcport}')
             print(f'UDP Destination Port: {packet.udp.dstport}')
-
-        if 'http' in packet:
-            print(f'HTTP Method: {packet.http.request_method if hasattr(packet.http, 'request_method') else 'N/A'}')
-            print(f'HTTP Host: {packet.http.host if hasattr(packet.http, 'host') else 'N/A'}')
-            print(f'HTTP URI: {packet.http.request_uri if hasattr(packet.http, 'request_uri') else 'N/A'}')
+            print(f'UDP Length: {packet.udp.length}')
+            print(f'UDP Checksum: {packet.udp.checksum}')
 
         print("\n---------------------------------------------------------------------------------------------------\n")
 except KeyboardInterrupt:
