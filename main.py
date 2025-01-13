@@ -8,21 +8,6 @@ interface = "Wi-Fi" # replace with your desired interface
 API_KEY = '0973fa42c6eb05d2d3cbb9b1fb3e6282f899bd6210ba14d691906e5e2142989e09a69f03b39a9e45'
 ABUSEIPDB_URL = "https://api.abuseipdb.com/api/v2/check"
 
-MALICIOUS_IPS = {
-    '192.253.237.45',
-    '183.7.117.77',
-    '192.253.237.199',
-    '171.211.34.173',
-    '49.87.0.200',
-    '182.132.24.205',
-    '60.184.244.96',
-    '221.10.34.142',
-    '192.253.237.135',
-    '117.90.219.231',
-    '218.92.0.217',
-    '82.86.80.146'
-}
-
 pcap_reader = pyshark.LiveCapture(
     interface=interface,
 )
