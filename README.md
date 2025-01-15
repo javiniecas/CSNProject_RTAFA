@@ -1,8 +1,16 @@
 # CSNProject_RTAFA
 
-[Overleaf Project](https://www.overleaf.com/1456664571jhxytbhhctfs#aff9d8)
+### Team Name: The Packet Inspectors
 
-Done by:
-Riccardo Baljak
-Ismar Nurdnovi
-Javier Nieto Castaño
+
+## Team Members
+
+- **Riccardo Baljak**
+- **Ismar Nurdnovic**
+- **Javier Nieto Castaño**
+
+
+
+## Overleaf Link
+
+All the magic happens here: [Overleaf Project](https://www.overleaf.com/1456664571jhxytbhhctfs#aff9d8)
